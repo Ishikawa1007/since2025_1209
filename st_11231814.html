@@ -1,0 +1,116 @@
+<html lang="ja">
+<script src="https://unpkg.com/wanakana@4.0.2/wanakana.min.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>スマホタイピング</title>
+    <link rel="stylesheet" href="./st_11231814html.css">
+    <!-- Mediapipe (Hands, Camera Utils, Drawing Utils) -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="./st_11231814html.js" defer></script>
+</head>
+<body>
+    <div id="page1" class="page" style="display:flex;">
+        <header>
+            <h1 class="title">スマホタイピング</h1>
+        </header>
+        <button type="button" class="stbutton">
+            あそぶ
+        </button>
+    </div>
+    <div id="page2" class="page" style="display:none;">
+        <header>
+            <h2 class="title">モード</h2>
+        </header>
+        <input type="range" class="tslider" min="1" max="5" value="3">
+        <p id="tsliderLabel" class="tsliderText">3ふん</p>
+        <input type="range" class="lslider" min="1" max="5" value="3">
+        <p id="lsliderLabel" class="lsliderText">ながいことば</p>
+        
+        <div class="buttonRow">
+            <button type="button" class="backbutton_a">
+                もどる
+            </button>
+            <button type="button" class="prepbutton">
+                じゅんび
+            </button>
+        </div>
+    </div>
+    <div id="page3" class="page" style="display:none;">
+        <!--確認画面-->
+        <header>
+            <h2 class="title">カメラをかくにんしよう</h2>
+        <div class="buttonRow2">
+            <button type="button" class="backbutton_b">
+                もどる
+            </button>
+            <button type="button" class="pracbutton">
+                OK!
+            </button>
+        </header>
+        <!--指が反応しているか、キーが対応して動くか確認(MPにて)**-->
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem; margin-top:0.5rem;">
+            <!-- video は非表示にして canvas に描画 -->
+            <video id="mp_input_video" style="display:none;" playsinline></video>
+            <canvas id="mp_output_canvas" width="640" height="480" style="max-width:90%; border:1px solid #ccc; background:#000;"></canvas>
+            <div id="mp_status" style="font-size:0.9rem; color:#333;">カメラ未接続</div>
+        </div>
+    </div>
+    <div id="page4" class="page" style="display:none;">
+        <!--ゲーム開始-->
+        
+        <div class="wordDisplay" style="text-align:center; margin:1rem 0;">
+            <p id="wordLabel" class="wordLabel" style="font-size:2rem; margin:0.5rem 0;"></p>
+            <p id="romajiLabel" class="romajiLabel" style="font-size:1.2rem; color:#666; margin:0;"></p>
+        </div>
+
+        <div style="display:flex; align-items:center; justify-content:center; gap:1rem;">
+            <span id="timerLabel"></span>
+            <button type="button" class="stopbutton">
+                やめる
+            </button>
+        </div>
+    </div>
+    <div id="page5" class="page" style="display:none;">
+        <!--結果-->
+    <table>
+        <tr>
+            <th>とくてん</th>
+            <th>point</th>
+        </tr>
+        <tr>
+            <th>レベル</th>
+            <th>revel</th>
+        </tr>
+        <tr>
+            <th>ながさ</th>
+            <th>length</th>
+        </tr>
+        <tr>
+            <th>はやさ</th>
+            <th>speed</th>
+        </tr>
+        <tr>
+            <th>正しくうったかず</th>
+            <th>true</th>
+        </tr>
+        <tr>
+            <th>まちがえたかず</th>
+            <th>false</th>
+        </tr>
+            <th>正しくうったわりあい</th>
+            <th>t_per</th>
+        </tr>
+        <tr>
+            <th>まちがえたわりあい</th>
+            <th>f_per</th>
+        </tr>        
+    </table>
+    <button type="button" class="homebutton">
+        ホームへ
+    </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;         /* 画面全体の高さを確保 */
+  display: flex;
+  flex-direction: column; /* タイトルとボタンを縦並び */
+  justify-content: center;/* 縦方向中央 */
+  align-items: center;    /* 横方向中央 */
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position:relative;
+}
+
+
+.title {
+  margin: 0;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 40px;    /* タイトルとボタンの間に余白 */
+}
+
+.stbutton{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0;
+}
+.backbutton_a{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin:0;
+}
+
+.prepbutton{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin:0;
+}
+
+.backbutton_b{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin:0;
+}
+
+.pracbutton{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin:0;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 16px; /* ボタン間のスペース */
+    align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buttonRow2 {
+  display: flex;
+  gap: 16px; /* ボタン間のスペース */
+    align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
