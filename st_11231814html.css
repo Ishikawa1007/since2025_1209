@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  width:100%;
   height: 100dvh;         /* 画面全体の高さを確保 */
   display: flex;
   flex-direction: column; /* タイトルとボタンを縦並び */
@@ -55,6 +56,12 @@ html, body {
   margin:0;
 }
 
+.stopbutton{
+  font-size: 20px;
+  padding: 10px 20px;
+  margin:0;
+}
+
 .buttonRow {
   display: flex;
   gap: 16px; /* ボタン間のスペース */
@@ -69,4 +76,16 @@ html, body {
     align-items: center;
   justify-content: center;
   margin-top: 20px;
+}
+
+
+.timerLabel{
+  position: absolute;
+  font-size:40px;
+  margin-left:auto;
+  top:0;
+  right:0;
+  width:100px;
+  height:60px;
+  background-color: orange;
 }

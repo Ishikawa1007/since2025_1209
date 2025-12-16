@@ -4,12 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>スマホタイピング</title>
-    <link rel="stylesheet" href="./st_11231814html.css">
+    <link rel="stylesheet" href="st_11231814html.css">
     <!-- Mediapipe (Hands, Camera Utils, Drawing Utils) -->
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
-    <script src="./st_11231814html.js" defer></script>
+    <script src="st_11231814html.js" defer></script>
 </head>
 <body>
     <div id="page1" class="page" style="display:flex;">
@@ -54,7 +54,7 @@
         <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem; margin-top:0.5rem;">
             <!-- video は非表示にして canvas に描画 -->
             <video id="mp_input_video" style="display:none;" playsinline></video>
-            <canvas id="mp_output_canvas" width="640" height="480" style="max-width:90%; border:1px solid #ccc; background:#000;"></canvas>
+            <canvas id="mp_output_canvas" width="720" height="270" style="max-width:90%; border:1px solid #ccc; background:#000;"></canvas>
             <div id="mp_status" style="font-size:0.9rem; color:#333;">カメラ未接続</div>
         </div>
     </div>
@@ -65,9 +65,16 @@
             <p id="wordLabel" class="wordLabel" style="font-size:2rem; margin:0.5rem 0;"></p>
             <p id="romajiLabel" class="romajiLabel" style="font-size:1.2rem; color:#666; margin:0;"></p>
         </div>
-
+        <div class="timer">
+        <span id="timerLabel" class="timerLabel"></span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem; margin-top:0.5rem;">
+            <!-- video は非表示にして canvas に描画 -->
+            <video id="mp_input_video" style="display:none;" playsinline></video>
+            <canvas id="mp_output_canvas" width="720" height="270" style="max-width:90%; border:1px solid #ccc; background:#000;"></canvas>
+            <div id="mp_status" style="font-size:0.9rem; color:#333;">カメラ未接続</div>
+        </div>
         <div style="display:flex; align-items:center; justify-content:center; gap:1rem;">
-            <span id="timerLabel"></span>
             <button type="button" class="stopbutton">
                 やめる
             </button>
@@ -77,36 +84,44 @@
         <!--結果-->
     <table>
         <tr>
-            <th>とくてん</th>
-            <th>point</th>
+            <th></th>
+            <th></th>
         </tr>
         <tr>
-            <th>レベル</th>
-            <th>revel</th>
+            <td>とくてん</td>
+            <td id="point"></td>
         </tr>
         <tr>
-            <th>ながさ</th>
-            <th>length</th>
+            <td>レベル</td>
+            <td id="revel"></td>
         </tr>
         <tr>
-            <th>はやさ</th>
-            <th>speed</th>
+            <td>ながさ</td>
+            <td id="length"></td>
         </tr>
         <tr>
-            <th>正しくうったかず</th>
-            <th>true</th>
+            <td>じかん</td>
+            <td id="time"></td>
         </tr>
         <tr>
-            <th>まちがえたかず</th>
-            <th>false</th>
-        </tr>
-            <th>正しくうったわりあい</th>
-            <th>t_per</th>
+            <td>はやさ</td>
+            <td id="speed"></td>
         </tr>
         <tr>
-            <th>まちがえたわりあい</th>
-            <th>f_per</th>
-        </tr>        
+            <td>正しくうったかず</td>
+            <td id="n_true"></td>
+        </tr>
+        <tr>
+            <td>まちがえたかず</td>
+            <td id="n_false"></td>
+        </tr>
+            <td>正しくうったわりあい</td>
+            <td id="t_per"></td>
+        </tr>
+        <tr>
+            <td>まちがえたわりあい</td>
+            <td id="f_per"></td>
+        </tr>       
     </table>
     <button type="button" class="homebutton">
         ホームへ

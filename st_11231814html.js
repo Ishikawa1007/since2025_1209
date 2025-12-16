@@ -365,4 +365,17 @@ function stopMediapipeHands(){
   if (status) status.textContent = 'カメラ停止';
 }
 
+
+
+
+  let p=10, lv="C", lng="ながい文",t=10,n_t=50,n_f=10,spd=t_p/t,t_p=n_t/(n_t+n_f),f_p=1-t_p;
+document.getElementById("point").textContent = p;
+document.getElementById("revel").textContent = lv;
+document.getElementById("length").textContent = lng;
+document.getElementById("time").textContent =t;
+document.getElementById("speed").textContent = spd;
+document.getElementById("n_true").textContent = n_t;
+document.getElementById("n_false").textContent = n_f;
+document.getElementById("t_per").textContent = t_p;
+document.getElementById("f_per").textContent = f_p;
 // ...existing code...
